@@ -1,0 +1,19 @@
+{
+  "name": "ebook-site",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "files": [
+    "public",
+    "server.js"
+  ],
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ebook-site": "file:",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.4",
+    "stripe": "^18.0.0"
+  }
+}
