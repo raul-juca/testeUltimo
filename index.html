@@ -7,6 +7,7 @@
   <title>Desperte Sua Melhor Versão - Guia Definitivo de Emagrecimento</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
+    /* Seu CSS inteirinho mantido */
     :root {
       --bg-light: #f9fdfb;
       --bg-dark: #121212;
@@ -17,6 +18,7 @@
       --primary: #39a36c;
       --primary-dark: #2c6e49;
       --accent: #e85d04;
+      --mercadopago-blue: #009ee3;
     }
 
     [data-theme="light"] {
@@ -134,23 +136,38 @@
       font-weight: bold;
     }
 
-    .payment-btn {
+    .payment-btn, .mercado-pago-btn {
       display: block;
       width: 100%;
       max-width: 280px;
-      margin: 0 auto;
-      background: var(--primary);
-      color: white;
+      margin: 0.5rem auto;
       padding: 1rem;
       font-size: 1.2rem;
       border: none;
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .payment-btn {
+      background: var(--primary);
+      color: white;
     }
 
     .payment-btn:hover {
       background: var(--primary-dark);
+      transform: scale(1.03);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .mercado-pago-btn {
+      background: var(--mercadopago-blue);
+      color: white;
+    }
+
+    .mercado-pago-btn:hover {
+      background: #007bb6;
       transform: scale(1.03);
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
@@ -185,56 +202,51 @@
       font-size: 0.9rem;
       margin-top: 2rem;
     }
+
     .whatsapp-button {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  background-color: #25d366;
-  color: white;
-  padding: 14px;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 22px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      background-color: #25d366;
+      color: white;
+      padding: 14px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
 
-.whatsapp-button:hover {
-  transform: scale(1.05);
-  background-color: #1ebe5b;
-}
-
-@media (max-width: 480px) {
-  .whatsapp-button {
-    bottom: 12px;
-    right: 12px;
-    padding: 12px;
-    font-size: 20px;
-  }
-}
-
-
-
+    .whatsapp-button:hover {
+      transform: scale(1.05);
+      background-color: #1ebe5b;
+    }
 
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
       }
-
       h2 {
         font-size: 1.5rem;
       }
-
       .price strong {
         font-size: 1.4rem;
       }
-
-      .payment-btn {
+      .payment-btn, .mercado-pago-btn {
         font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-button {
+        bottom: 12px;
+        right: 12px;
+        padding: 12px;
+        font-size: 20px;
       }
     }
   </style>
@@ -265,9 +277,17 @@
       <strong>R$ 27,90</strong>
     </div>
 
+    <!-- Mesma estrutura que você mandou, só ajustado os links de pagamento -->
     <button class="payment-btn" onclick="window.location.href='https://buy.stripe.com/test_28o9Cf85geXngfe3cd'">
       Comprar Agora
     </button>
+
+    <button class="mercado-pago-btn" onclick="window.location.href='https://mpago.li/2vioJtG'">
+      Pagar com Mercado Pago
+    </button>
+    
+  
+    
 
     <div class="blinking-message">Você perderá 10kg em 1 semana!</div>
     <div id="stock-message" class="stock-alert">Restam apenas 30 unidades! Garanta já o seu!</div>
@@ -286,7 +306,6 @@
       toggleBtn.textContent = currentTheme === 'light' ? '☀️' : '🌙';
     }
 
-    // Simulador de estoque
     let stock = 30;
     const stockEl = document.getElementById('stock-message');
 
@@ -297,23 +316,21 @@
       } else {
         stockEl.textContent = `Restam apenas ${stock} unidades! Garanta já o seu!`;
       }
-
       if (stock <= 0) {
         setTimeout(() => {
           stock = 30;
           updateStock();
-        }, 15000); // Reseta em 15 segundos
+        }, 15000);
       } else {
-        setTimeout(updateStock, 5000); // Diminui a cada 5s
+        setTimeout(updateStock, 5000);
       }
     }
 
     updateStock();
   </script>
+
   <a href="https://wa.me/5599999999999" class="whatsapp-button" target="_blank" aria-label="Fale conosco no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
-  
-</a>
 </body>
 </html>
