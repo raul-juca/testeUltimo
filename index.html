@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Desperte Sua Melhor Versão - Guia Definitivo de Emagrecimento</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="/icon.png" type="image/png">
   <style>
     /* Seu CSS inteirinho mantido */
     :root {
@@ -289,7 +290,7 @@
   
     
 
-    <div class="blinking-message">Você perderá 10kg 1 semana a 30 dias!</div>
+    <div class="blinking-message">Você perderá 10kg de 1 semana a 30 dias!</div>
     <div id="stock-message" class="stock-alert">Restam apenas 60 unidades! Garanta já o seu!</div>
   </div>
 
@@ -311,7 +312,7 @@
 
     function updateStock() {
       stock--;
-      if (stock <= 3) {
+      if (stock <= 5) {
         stockEl.textContent = '⚠️ Últimas unidades! Corre!';
       } else {
         stockEl.textContent = `Restam apenas ${stock} unidades! Garanta já o seu!`;
