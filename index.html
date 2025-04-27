@@ -289,8 +289,8 @@
   
     
 
-    <div class="blinking-message">Você perderá 10kg em 1 semana!</div>
-    <div id="stock-message" class="stock-alert">Restam apenas 30 unidades! Garanta já o seu!</div>
+    <div class="blinking-message">Você perderá 10kg 1 semana a 30 dias!</div>
+    <div id="stock-message" class="stock-alert">Restam apenas 60 unidades! Garanta já o seu!</div>
   </div>
 
   <footer>
@@ -306,7 +306,7 @@
       toggleBtn.textContent = currentTheme === 'light' ? '☀️' : '🌙';
     }
 
-    let stock = 30;
+    let stock = 60;
     const stockEl = document.getElementById('stock-message');
 
     function updateStock() {
@@ -318,18 +318,18 @@
       }
       if (stock <= 0) {
         setTimeout(() => {
-          stock = 30;
+          stock = 60;
           updateStock();
-        }, 15000);
+        }, 60000);
       } else {
-        setTimeout(updateStock, 5000);
+        setTimeout(updateStock, 17000);
       }
     }
 
     updateStock();
   </script>
 
-  <a href="https://wa.me/5599999999999" class="whatsapp-button" target="_blank" aria-label="Fale conosco no WhatsApp">
+  <a href="https://wa.me/5512997463789" class="whatsapp-button" target="_blank" aria-label="Fale conosco no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 </body>
